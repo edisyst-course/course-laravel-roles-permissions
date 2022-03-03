@@ -43,7 +43,7 @@ class ArticleController extends Controller
         Article::create($attributes +
             [
                 'user_id'      => auth()->id(),
-                'published_at' => $request->input('published') ? now() : null;
+                'published_at' => $request->input('published') ? now() : null,
             ]);
 
         return redirect()->route('articles.index');
