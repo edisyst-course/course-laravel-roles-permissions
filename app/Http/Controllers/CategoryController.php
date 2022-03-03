@@ -13,4 +13,14 @@ class CategoryController extends Controller
             'categories' => Category::all()
         ]);
     }
+
+    public function create()
+    {
+        return view('categories.create');
+    }
+
+    public function edit(Category $category)
+    {
+        return view('categories.edit', compact('category'));
+    }
 }

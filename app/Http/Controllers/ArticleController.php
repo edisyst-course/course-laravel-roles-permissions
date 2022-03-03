@@ -11,7 +11,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::with('user')->get();
 
         return view('articles.index', compact('articles'));
     }
@@ -40,7 +40,11 @@ class ArticleController extends Controller
 //        $attributes['published_at'] = Gate::allows('publish-articles')
 //        && $request->input('published') ? now() : null;
 
-        Article::create($attributes + ['user_id' => auth()->id()]);
+        Article::create($attributes +
+            [
+                'user_id'      => auth()->id(),
+                'published_at' => $request->input('published') ? now() : null;
+            ]);
 
         return redirect()->route('articles.index');
 

@@ -10,6 +10,9 @@ Ho selezionato Laravel UI + Tabler (provato nel SAMPLE dei File Uploads)
 ### Metodi di protezinoe
 - Auth middleware per le rotte
 - colonna **user_id** per mostrare solo gli articoli del mio user
+- AuthorizedScope: lo aggiungo ai model dove voglio che sia usato
+- IsAdminMiddleware: lo aggiungo al kernel dei middleware
+    - faccio dei controlli su auth()->user()->is_admin
 
-Sono al video 2 - minuto 2:13
+Sono al video 4 - minuto 0:13
 

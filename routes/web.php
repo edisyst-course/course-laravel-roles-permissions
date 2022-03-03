@@ -36,6 +36,11 @@ Route::group([
 ], function (){
     Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 
+    // Administrator routes
+    Route::group(['middleware' => 'is_admin'], function () {
+        Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+    });
+
 });
 
 
