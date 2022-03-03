@@ -18,7 +18,7 @@ class AuthorizedScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
     // per visualizzare solo gli elementi dell'utente auth
-        if(auth()->check() && !auth()->user()->is_admin){
+        if(auth()->check() && !auth()->user()->is_admin && !auth()->user()->is_publisher){
             $builder->where('user_id', auth()->id());
         }
     }

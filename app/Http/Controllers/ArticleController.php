@@ -43,7 +43,8 @@ class ArticleController extends Controller
         Article::create($attributes +
             [
                 'user_id'      => auth()->id(),
-                'published_at' => $request->input('published') ? now() : null,
+                'published_at' => (auth()->user()->is_publisher || auth()->user()->is_admin)
+                    && $request->input('published') ? now() : null,
             ]);
 
         return redirect()->route('articles.index');
@@ -81,6 +82,10 @@ class ArticleController extends Controller
             'title' => 'required|string',
             'full_text' => 'required|string',
         ]);
+
+        if (auth()->user()->is_publisher || auth()->user()->is_admin) {
+            $attributes['published_at'] = $request->input('published') ? now() : null;
+        }
 
 //        $attributes['published_at'] = Gate::allows('publish-articles')
 //        && $request->input('published') ? now() : null;
