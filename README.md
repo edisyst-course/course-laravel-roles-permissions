@@ -14,10 +14,7 @@ Ho selezionato Laravel UI + Tabler (provato nel SAMPLE dei File Uploads)
 - IsAdminMiddleware: lo aggiungo al kernel dei middleware
     - faccio dei controlli su auth()->user()->is_admin
 
-Sono al video 4 - minuto 1:30 
-(stò per fare i roles)
-Devo controllare che published_at funzioni
-Creo il branch develop
-Poi faccio il branch no_roles e lo lascio così
+Sono al video 4 - minuto 1:30 (stò per fare i roles)
+
 
 

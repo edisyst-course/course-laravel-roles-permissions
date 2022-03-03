@@ -30,10 +30,10 @@
                             </select>
                             <br />
 
-                            @can('publish-articles')
+{{--                            @can('publish-articles')--}}
                                 <input type="checkbox" name="published" value="1" /> Published
                                 <br /><br />
-                            @endcan
+{{--                            @endcan--}}
 
                             <input type="submit" value=" Save Article " class="btn btn-primary" />
                         </form>
