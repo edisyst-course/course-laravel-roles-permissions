@@ -45,12 +45,12 @@ class User extends Authenticatable
     ];
 
 
-    public function getIsAdminAttribute()
+    public function getIsAdminAttribute() // $user->is_admin
     {
         return $this->role_id == 2;
     }
 
-    public function getIsPublisherAttribute()
+    public function getIsPublisherAttribute() // $user->is_publisher
     {
         return $this->role_id == 3;
     }
