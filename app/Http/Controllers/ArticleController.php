@@ -35,7 +35,6 @@ class ArticleController extends Controller
             'full_text' => 'required|string',
         ]);
 
-//        $attributes['user_id'] = $organizationId;
         // only store attribute for published_at if authenticated user is an admin or a publisher
         // additionally populate column only if checkbox is selected
         $attributes['published_at'] = Gate::allows('publish-articles')
@@ -43,7 +42,7 @@ class ArticleController extends Controller
 
         Article::create($attributes +
             [
-                'user_id'      => auth()->id(),
+                'user_id'      => $organizationId,
                 'published_at' => Gate::allows('publish-articles')
                     && $request->input('published') ? now() : null,
             ]);

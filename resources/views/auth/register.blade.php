@@ -3,6 +3,7 @@
 @section('content')
     <form class="card card-md" action="{{ route('register') }}" method="post" autocomplete="off">
         @csrf
+        <input type="hidden" name="organization_id" value="{{ request('organization_id', '') }}" />
 
         <div class="card-body">
             <h2 class="card-title text-center mb-4">{{ __('Create new account') }}</h2>

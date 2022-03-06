@@ -35,6 +35,7 @@ Route::group([
     'middleware' => 'auth'
 ], function (){
     Route::resource('articles', \App\Http\Controllers\ArticleController::class);
+    Route::view('invite', 'invite')->name('invite');
 
     // Administrator routes
     Route::group(['middleware' => 'is_admin'], function () {

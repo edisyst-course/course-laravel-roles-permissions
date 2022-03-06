@@ -49,9 +49,9 @@ class ArticlePolicy
 
     public function update(User $user, Article $article)
     {
-        return $user->id === $article->user_id
+        return $user->id === $article->user_id || $user->organization_id === $article->user_id
             ? Response::allow()
-            : Response::deny('No! Non puoi modificare questo articolo, non è tuo.');
+            : Response::deny('No! Non puoi modificare questo articolo, non è della tua organizzazione.');
     }
 
     /**
