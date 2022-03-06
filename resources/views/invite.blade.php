@@ -5,12 +5,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Invite a Teammate') }}</div>
+                    <div class="card-header">{{ __('Join the Organization') }}</div>
 
                     <div class="card-body">
-                        Link for invitation:
-                        <br />
-                        {{ route('register') }}?organization_id={{ auth()->user()->organization_id ?? auth()->id() }}
+                        <form action="{{ route('join.store') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="organization_id" value="{{ $organization->id }}" />
+                            Do you want to join to <strong>{{ $organization->name }}</strong>?
+                            <br>
+                            <input type="submit" value="Yes, join" class="btn-primary">
+                        </form>
                     </div>
                 </div>
             </div>

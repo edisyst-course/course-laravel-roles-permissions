@@ -37,6 +37,9 @@ Route::group([
     Route::resource('articles', \App\Http\Controllers\ArticleController::class);
     Route::view('invite', 'invite')->name('invite');
 
+    Route::get('join', [\App\Http\Controllers\JoinController::class, 'create'])->name('join.create');
+    Route::post('join', [\App\Http\Controllers\JoinController::class, 'store'])->name('join.store');
+
     // Administrator routes
     Route::group(['middleware' => 'is_admin'], function () {
         Route::resource('categories', \App\Http\Controllers\CategoryController::class);
