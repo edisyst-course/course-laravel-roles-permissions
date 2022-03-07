@@ -40,6 +40,8 @@ Route::group([
     Route::get('join', [\App\Http\Controllers\JoinController::class, 'create'])->name('join.create');
     Route::post('join', [\App\Http\Controllers\JoinController::class, 'store'])->name('join.store');
 
+    Route::get('organization/{organization_id}', [\App\Http\Controllers\JoinController::class, 'organization'])->name('organization');
+
     // Administrator routes
     Route::group(['middleware' => 'is_admin'], function () {
         Route::resource('categories', \App\Http\Controllers\CategoryController::class);

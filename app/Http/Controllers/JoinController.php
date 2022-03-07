@@ -20,4 +20,16 @@ class JoinController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function organization()
+    {
+        $organization = User::findOrFail(\request('organization_id'));
+
+        session([
+            'organization_id' => $organization->id,
+            'organization_name' => $organization->name,
+        ]);
+
+        return back();
+    }
 }
