@@ -59,7 +59,10 @@ class User extends Authenticatable
 
     public function organizations()
     {
-        return $this->belongsToMany(User::class, 'organization_user','user_id','organization_id');
+        return $this->belongsToMany(User::class,
+        'organization_user',
+        'user_id',
+        'organization_id')->withPivot(['role_id']);
     }
 
 

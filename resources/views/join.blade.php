@@ -13,6 +13,9 @@
                             <input type="hidden" name="organization_id" value="{{ $organization->id }}" />
                             Do you want to join to <strong>{{ $organization->name }}</strong>?
                             <br>
+                            Join as:
+                            <br>
+                            select>option[Simple User]
                             <input type="submit" value="Yes, join" class="btn btn-primary">
                         </form>
                     </div>

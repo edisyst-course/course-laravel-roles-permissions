@@ -15,7 +15,7 @@ Ho selezionato Laravel UI + Tabler (provato nel SAMPLE dei File Uploads)
     - faccio dei controlli su auth()->user()->is_admin
 
 ### Many Users in Many Organizations
-Sono al video 9 - minuto 7:30 (stò per fare i roles)
+Sono al video 10 - minuto 2:30 (stò per fare i roles)
 
 
 git clone --branch develop git@github.com:edisyst-course/course-laravel-roles-permissions.git
