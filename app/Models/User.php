@@ -85,4 +85,12 @@ class User extends Authenticatable
         return NULL;
     }
 
+    public function getRoleIdAttribute()
+    {
+        if(session('organization_role_id')) {
+            return session('organization_role_id');
+        }
+
+        return $this->attributes['role_id'];
+    }
 }

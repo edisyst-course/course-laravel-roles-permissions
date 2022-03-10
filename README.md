@@ -1,5 +1,8 @@
 # Corso: Practical Roles and Permissions in Laravel
-https://laraveldaily.teachable.com/courses/848410/lectures/15392024
+
+- https://laraveldaily.teachable.com/courses/848410/lectures/15392024
+- https://github.com/LaravelDaily/Laravel-Blog-Permissions-Course
+
 
     composer require laraveldaily/larastarters --dev
     php artisan larastarters:install
@@ -15,7 +18,7 @@ Ho selezionato Laravel UI + Tabler (provato nel SAMPLE dei File Uploads)
     - faccio dei controlli su auth()->user()->is_admin
 
 ### Many Users in Many Organizations
-Sono al video 10 - minuto 2:30 (stò per fare i roles)
+Devo rivedere cosa non funziona nel mio proj e fare l'ultimissimo video dal minuto 1:00
 
 
 git clone --branch develop git@github.com:edisyst-course/course-laravel-roles-permissions.git

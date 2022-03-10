@@ -15,7 +15,11 @@
                             <br>
                             Join as:
                             <br>
-                            select>option[Simple User]
+                            <select name="role_id">
+                                <option value="1">Simple User</option>
+                                <option value="2">Administrator</option>
+                                <option value="3">Publisher</option>
+                            </select>
                             <input type="submit" value="Yes, join" class="btn btn-primary">
                         </form>
                     </div>
